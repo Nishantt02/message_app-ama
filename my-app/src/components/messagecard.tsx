@@ -132,7 +132,9 @@ const Mastercard = ({ message, onMessageDelete }: MessagecardProps) => {
       );
 
       toast.success(response.data.message);
-      onMessageDelete(message._id);
+      // onMessageDelete(message._id);
+      onMessageDelete(String(message._id));
+
     } catch (error: unknown) {
       if (axios.isAxiosError(error)) {
         toast.error(error.response?.data?.message || "Error deleting message");

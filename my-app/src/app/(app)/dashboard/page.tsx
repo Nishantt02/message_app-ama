@@ -171,13 +171,14 @@ const Page = () => {
       {/* MESSAGES LIST */}
       <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
         {messages.length > 0 ? (
-          messages.map((message) => (
-            <Mastercard
-              key={message._id}
-              message={message}
-              onMessageDelete={handleDeleteMessage}
-            />
-          ))
+         messages.map((message) => (
+  <Mastercard
+    key={String(message._id)}
+    message={message}
+    onMessageDelete={handleDeleteMessage}
+  />
+))
+
         ) : (
           <p>No messages to display.</p>
         )}
